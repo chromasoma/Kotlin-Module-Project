@@ -1,13 +1,10 @@
 import java.util.Scanner
-class SelectionselectionMenuScreen {
+class SelectionselectionMenuScreen<T> {
 
     //заметки
-    var notes: MutableMap<Int, String>()
+    var objects: MutableMap<Int, T>()
     //архивы
-    var archives: MutableMap<Int, String>()
-
-    const val NOTE = 0
-    const val ARCHIVE = 1
+    //var archives: MutableMap<Int, Archive>()
 
     //тут будут храниться слова для структур, которые будут в приложении.
     //с такой структурой будет удобнее добавлять в приложение новую структуру при желании
