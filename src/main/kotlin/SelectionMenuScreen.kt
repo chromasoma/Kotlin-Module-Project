@@ -14,7 +14,8 @@ class SelectionselectionMenuScreen {
     val words = mapOf(NOTE to listOf("заметок", "заметку","моя","созданная", "заметка"),
         ARCHIVE to listOf("архивов", "архив","мой","созданный", "архив"))
 
-    fun readingUserInput(MutableList<String>): String?
+    //считывает выбор пункта меню и возвращает результат
+    fun readingUserInput(): Int
     {
         while (true)
         {
@@ -51,6 +52,24 @@ class SelectionselectionMenuScreen {
                 }
             }
 
+        }
+    }
+
+    fun reactToInput(inp: Int)
+    {
+        when(inp)
+        {
+            0 -> {
+
+            }
+            1 ->
+            {
+
+            }
+            2 ->
+            {
+
+            }
         }
     }
     fun selectionMenu(numberOfStructure: Int)
