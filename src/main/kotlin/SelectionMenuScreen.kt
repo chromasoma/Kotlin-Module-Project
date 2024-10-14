@@ -1,14 +1,13 @@
 import java.util.Scanner
-class SelectionMenuScreen {
+class SelectionselectionMenuScreen {
 
     //заметки
-    var notes: MutableList<String>
+    var notes: MutableMap<Int, String>()
+    //архивы
+    var archives: MutableMap<Int, String>()
 
     const val NOTE = 0
     const val ARCHIVE = 1
-
-    //архивы
-    var archives: MutableList<String>
 
     //тут будут храниться слова для структур, которые будут в приложении.
     //с такой структурой будет удобнее добавлять в приложение новую структуру при желании
@@ -33,7 +32,7 @@ class SelectionMenuScreen {
                 }
 
                 //Выбор архива, выбор заметки, экран заметки — это меню выбора.
-                SELECTIONMENU -> {
+                SELECTIONselectionMenu -> {
                     var newInput: Int? = Scanner(System.`in`).nextLine().toIntOrNull()
                     //если есть буквы или символы
                     if (!newInput!!.all { char -> char.isDigit() })
@@ -54,7 +53,7 @@ class SelectionMenuScreen {
 
         }
     }
-    fun menu(numberOfStructure: Int)
+    fun selectionMenu(numberOfStructure: Int)
     {
         println(
         """
@@ -64,5 +63,14 @@ class SelectionMenuScreen {
         2. Выход
         """)
         
+    }
+
+    fun selectionObj(numberOfStructure: Int)
+    {
+        when (numberOfStructure)
+        {
+            NOTE -> println(notes.map{ "${it.key} ${it.value}" }.joinToString("\n"))
+            ARCHIVE -> println(archives.map{ "${it.key} ${it.value}" }.joinToString("\n"))
+        }
     }
 }
