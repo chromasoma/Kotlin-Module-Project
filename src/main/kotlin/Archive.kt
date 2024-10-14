@@ -7,6 +7,6 @@ class Archive(var name: String) {
 
       fun showNotes()
       {
-          notes
+          println(notes.map{ "${it.key} ${it.value}" }.joinToString("\n"))
       }
 }
