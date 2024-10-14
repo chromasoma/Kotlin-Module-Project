@@ -1,15 +1,12 @@
 import java.util.Scanner
 class SelectionselectionMenuScreen<T> {
 
-    //заметки
-    var objects: MutableMap<Int, T>()
-    //архивы
-    //var archives: MutableMap<Int, Archive>()
+    //архивы, список
+    var archives: MutableMap<Int, Archive> = mutableMapOf()
 
     //тут будут храниться слова для структур, которые будут в приложении.
-    //с такой структурой будет удобнее добавлять в приложение новую структуру при желании
-    val words = mapOf(NOTE to listOf("заметок", "заметку","моя","созданная", "заметка"),
-        ARCHIVE to listOf("архивов", "архив","мой","созданный", "архив"))
+    val words = mapOf(NOTE to listOf("заметок", "заметку","моя","созданная", "заметка", "заметки"),
+        ARCHIVE to listOf("архивов", "архив","мой","созданный", "архив", "архива"))
 
     //считывает выбор пункта меню и возвращает результат
     fun readingUserInput(): Int
@@ -21,12 +18,19 @@ class SelectionselectionMenuScreen<T> {
                 //Выбор элемента из списка и создание объекта.
                 CREATEOBJ ->
                 {
-                    println("Введите название объекта")
-                    var newInput: Int? = Scanner(System.`in`).nextLine().toIntOrNull()
-                    if (newInput.isNullOrBlank())
+                    println("Введите название ")
+
+                    while (true)
                     {
-                        println("Пустой ввод недопустим! Сохранение невозможно.")
+                        var newInput: Int? = Scanner(System.`in`).nextLine().toIntOrNull()
+                        if (newInput.isNullOrBlank())
+                            {
+                                println("Пустой ввод недопустим! Повторите попытку.")
+                            }
+                        else
+                            break
                     }
+
                 }
 
                 //Выбор архива, выбор заметки, экран заметки — это меню выбора.
