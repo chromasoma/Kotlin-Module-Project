@@ -1,8 +1,17 @@
 import java.util.Scanner
 class SelectionMenu {
 
+    //заметки
+    var notes: MutableList<String>
 
-    fun readingUserInput(MutableList<String>)
+    //архивы
+    var archives: MutableList<String>
+
+    //тут будут храниться слова для структур, которые будут в приложении.
+    //с такой структурой будет удобнее добавлять в приложение новую структуру при желании
+    val words = mutableMapOf<Int, MutableList<String>>()
+
+    fun readingUserInput(MutableList<String>): String?
     {
         while (true)
         {
@@ -25,25 +34,28 @@ class SelectionMenu {
                 return variableName
         }
     }
-    fun menu(mutableList: MutableList<String>)
+    fun menu(itIsNote: Boolean)
     {
-        println(
-        """
-        Список архивов: 
-        0. Создать архив
-        1. Это мой уже созданный архив
-        2. Выход
-        
-        Список заметок: 
-        0. Создать заметку
-        1. Это моя уже созданная заметка
-        2. Выход
-        """
-        )
+        if (itIsNote)
+            println(
+            """
+            Список заметок: 
+            0. Создать заметку
+            1. Это моя уже созданная заметка
+            2. Выход
+            """)
+        else
+            println(
+            """                
+            Список архивов: 
+            0. Создать архив
+            1. Это мой уже созданный архив
+            2. Выход
+            """)
 
-        val list: MutableList<String> = mutableListOf("0", "1", "2")
 
-        list ->
+
+
         
     }
 }
