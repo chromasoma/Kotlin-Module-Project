@@ -1,0 +1,21 @@
+  fun readingUserInput(): Int
+    {
+        while (true)
+        {
+            var newInput: Int? = Scanner(System.`in`).nextLine().toIntOrNull()
+            //если есть буквы или символы
+            if (!newInput!!.all { char -> char.isDigit() })
+            {
+                println("Следует ввести цифру")
+                continue
+            }
+            //если нет в списке
+            else if (not newInput.toInt() in list)
+            {
+                println("Такой цифры нет")
+                continue
+            }
+            else
+                return newInput
+        }
+    }

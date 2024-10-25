@@ -1,4 +1,5 @@
-class Archive(var name: String) {
+class Archive(var name: String)
+{
       var notes: MutableMap<Int, Note> = mutableMapOf()
       fun addNote(note: Note)
       {
